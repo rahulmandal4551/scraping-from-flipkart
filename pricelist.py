@@ -6,10 +6,10 @@ print("The product list along with prices is here...\n\n")
 for i in range(1,58):
 	actualLink = ("https://www.flipkart.com/search?page="+str(i)+"&q="+searchItem)
 	try:
-		page=urlopen(actualLink)
+		searchItemPage=urlopen(actualLink)
 	except:
 		print("Internet Connection Error...")
-	soup=bs(page,"lxml")
+	soup=bs(searchItemPage,"lxml")
   #print(soup.prettify())
 	soup.prettify()
 	allPrice=soup.find_all(class_="_1vC4OE")
